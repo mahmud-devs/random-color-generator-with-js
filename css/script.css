@@ -1,0 +1,28 @@
+.boxItem {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.colorBox {
+    width: 300px;
+    height: 300px;
+    background: black;
+}
+.btn__box {
+    display: flex;
+    column-gap: 60px;
+}
+.btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.colorCode{
+    padding: 10px 50px;
+}
