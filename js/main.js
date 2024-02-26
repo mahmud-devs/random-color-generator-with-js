@@ -14,6 +14,7 @@ gbtn.addEventListener("click", function () {
         navigator.clipboard.writeText(finalColor);
         cbtn.innerHTML = "Copied";
     });
+    cbtn.innerHTML = "Copy Color";
 });
 
 function generateColor() {
