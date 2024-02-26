@@ -9,6 +9,11 @@ const colorCode = document.querySelector("input");
 gbtn.addEventListener("click", function () {
     const finalColor = generateColor();
     colorCode.value = finalColor;
+    colorBox.style.background = finalColor;
+    cbtn.addEventListener("click", function () {
+        navigator.clipboard.writeText(finalColor);
+        cbtn.innerHTML = "Copied";
+    });
 });
 
 function generateColor() {
