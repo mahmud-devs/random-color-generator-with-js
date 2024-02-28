@@ -1,18 +1,27 @@
 /*
 =================================
 */
-const addBtn = document.querySelector(".addBtn");
-const removeBtn = document.querySelector(".removeBtn");
+const gbtn = document.querySelector(".Gbtn");
+const cbtn = document.querySelector(".Cbtn");
 const colorBox = document.querySelector(".colorBox");
-const input = document.querySelector("input");
-const ul = document.querySelector("ul");
+const colorCode = document.querySelector("input");
 
-addBtn.addEventListener("click", function () {
-    let listItem = `<li><span class="listItem">${input.value}</span></li>`;
-    ul.innerHTML += listItem;
-    ul.classList.remove("none")
+gbtn.addEventListener("click", function () {
+    const finalColor = generateColor();
+    colorCode.value = finalColor;
+    colorBox.style.background = finalColor;
+    cbtn.addEventListener("click", function () {
+        navigator.clipboard.writeText(finalColor);
+        cbtn.innerHTML = "Copied";
+    });
+    cbtn.innerHTML = "Copy Color";
 });
-removeBtn.addEventListener("click", function () {
-    let listItem = `<li><span class="listItem">${input.value}</span></li>`;
-    ul.classList.add("none")
-});
+
+function generateColor() {
+    const red = Math.round(Math.random() * 250);
+    const blue = Math.round(Math.random() * 250);
+    const green = Math.round(Math.random() * 250);
+    const rgb = `rgb(${red},${blue},${green})  `;
+    console.log(rgb);
+    return rgb;
+}
